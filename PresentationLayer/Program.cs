@@ -11,7 +11,7 @@ namespace PresentationLayer
     {
         //public static string groupId;
         //public static string nickname;
-        const string INVALID_GROUPID_ERROR = "The group doesn't exist";
+        const string INVALID_GROUPID_ERROR = "The group doesn't exist!";
         const string INVALID_NICKNAME_ERROR = "Already used nickname";
         static void Main(string[] args)
         {
