@@ -8,8 +8,8 @@ namespace LogicLayer
 {
     interface IUser
     {
-        string GroupID { get; }
-        string Nickname{ get; }
+        string GroupID();
+        string Nickname();
         void Send(string messageContent);
         void Logout();
     }

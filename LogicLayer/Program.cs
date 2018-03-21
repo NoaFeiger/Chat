@@ -10,6 +10,10 @@ namespace LogicLayer
     {
         static void Main(string[] args)
         {
+            Chatroom CR = new Chatroom();
+            CR.Start();
+            
+            
         }
     }
 }

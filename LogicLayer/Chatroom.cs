@@ -13,7 +13,8 @@ namespace LogicLayer
         private List<Message> messages;
         private IUser currentUser;
         public const string URL= null;
-
+        const string INVALID_GROUPID_ERROR = "The group doesn't exist!";
+        const string INVALID_NICKNAME_ERROR = "Already used nickname";
         public Chatroom()
         {
             this.users = new List<User>();
@@ -21,9 +22,29 @@ namespace LogicLayer
             this.currentUser = null;
         }
 
-        public string Registration(string groupId, string nickname)
+        public void Start()
         {
-            throw new NotImplementedException();
+            //start and init all the fields of chatroom
+            //open a new gui object and send him to start
+           // Gui g = new Gui(this);
+            // g.Start();
+           
+        }
+        public bool Registration(string groupId, string nickname)
+        {
+            return false;
+            
+          // check validation of input, if not ok throw exception
+        }
+        public bool IsValidnickname(string groupId, string nickname)
+        {
+            // need to check if this nickname is already used
+            return false;
+        }
+        public bool IsValidgroupId(string groupId, string nickname)
+        {
+          
+            return false;
         }
 
         public void Login(string groupId, string nickname)
@@ -46,14 +67,15 @@ namespace LogicLayer
             throw new NotImplementedException();
         }
 
-        public void GetNMessages(int n)
+        public List<string> RetrieveNMessages(int n)
         {
             throw new NotImplementedException();
         }
 
-        public void DisplayNMessages(int n)
+       
+        public List<Message> DisplayNMessages(int n)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public void Send(string messageContent)
