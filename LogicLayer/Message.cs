@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LogicLayer
 {
-    class Message
+      public class Message
     {
 
     }

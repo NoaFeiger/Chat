@@ -16,9 +16,15 @@ namespace LogicLayer
             this.nickname = nickname;
 
         }
-        public string GroupID => throw new NotImplementedException();
+        public string GroupID ()
+        {
+            return this.groupID;
+        }
 
-        public string Nickname => throw new NotImplementedException();
+        public string Nickname()
+        {
+            return this.nickname;
+        }
 
         public void Logout()
         {
