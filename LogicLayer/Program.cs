@@ -9,6 +9,8 @@ namespace LogicLayer
 {
     class Program
     {
-        
+        public static void Main(string[] args)
+        {
+        }
     }
 }

@@ -8,22 +8,16 @@ namespace PersistentLayer
 {
     public class UserHandler
     {
-       // public static void Main(String[] args)
-       // {
-       //     saveToFile(new User("NoaFeiger", "23"));
-       //     saveToFile(new User("NitzanFarhi", "1"));
-       //     List<User> temp = RestoreUsers();
-       // //    Print(temp);
-       // Console.ReadLine();
-       //}
-        //public static void Print(List<User> temp) // just for checking
+        //public static void Main(String[] args)
         //{
-        //    foreach (User item in temp)
-        //    {
-        //        Console.WriteLine(item.GroupID() + " " + item.Nickname());
-        //    }
-        //    //}
-        public static void SaveToFile(string nickname, string groupId)
+        //    SaveToFile("NoaFeiger", "23");
+        //    SaveToFile("NitzanFarhi", "1");
+        //    List<string> temp = RestoreUsers();
+        //    //    Print(temp);
+        //    Console.ReadLine();
+        //}
+       
+            public static void SaveToFile(string nickname, string groupId)
         {
             string startupPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             startupPath += "\\DataUsers.txt";
@@ -38,8 +32,8 @@ namespace PersistentLayer
         public static List<string> RestoreUsers()
         {
             List<string> userList = new List<string>();
-            string startupPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            startupPath += "\\DataUsers.txt";
+            string startupPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            startupPath += "\\PersistentLayer"+"\\DataUsers.txt";
             var lines = System.IO.File.ReadAllLines(startupPath);
             foreach (string item in lines)
             {

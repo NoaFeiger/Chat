@@ -24,7 +24,8 @@ namespace LogicLayer
             this.messages = new List<Message>();
             this.currentUser = null;
         }
-        public void Start() { 
+        public void Start()
+        {
             //restoring the users list
             List<String> usersData = UserHandler.RestoreUsers();
             foreach (string data in usersData)
@@ -35,13 +36,15 @@ namespace LogicLayer
 
             //restoring the messages list
             List<String> messagesData = MessageHandler.RestoreMessages();
-            foreach (string data in messagesData)
+            if (messagesData != null)
             {
-                string[] details = data.Split(',');
-                this.messages.Add(new Message(details[0], details[1], details[2], details[3], details[4]));
+                foreach (string data in messagesData)
+                {
+                    string[] details = data.Split(',');
+                    this.messages.Add(new Message(details[0], details[1], details[2], details[3], details[4]));
+                }
             }
         }
-
         /*Check if groupID and nickname inputs are legal. If groupID doesn't exist or nickname is already been used
         by the same group, the function throws an exception*/
         public bool Registration(string groupId, string nickname)
