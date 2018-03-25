@@ -47,7 +47,6 @@
   <ItemGroup>
     <Compile Include="Gui.cs" />
     <Compile Include="IGui.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

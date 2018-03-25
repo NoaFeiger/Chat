@@ -3,17 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PersistentLayer;
 
 namespace LogicLayer
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            Chatroom CR = new Chatroom();
-            CR.Start();
-            
-            
-        }
+        
     }
 }

@@ -10,7 +10,8 @@ namespace LogicLayer
     {
         string GroupID();
         string Nickname();
-        void Send(string messageContent);
+        Message Send(string messageContent);
         void Logout();
+        
     }
 }
