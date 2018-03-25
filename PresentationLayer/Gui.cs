@@ -9,12 +9,6 @@ namespace PresentationLayer
 
     class Gui
     {
-
-        static void Main(string[] args)
-        {
-            Gui g = new Gui(new Chatroom());
-            g.Start();
-        }
         private Chatroom chatroom;
         const string INVALID_GROUPID_ERROR = "The group doesn't exist!";
         const string INVALID_NICKNAME_ERROR = "Already used nickname";
@@ -138,7 +132,7 @@ namespace PresentationLayer
         }
         public void Logout()
         {
-
+            chatroom.Logout();
         }
         public void Send()
         {
@@ -158,7 +152,7 @@ namespace PresentationLayer
             }
            
         }
-      /* public static void DisplayNMessages()
+      /*public static void DisplayNMessages()
         {
             Console.WriteLine("enter how many messages do you want to display");
             int nMessagestoDisplay = int.Parse(Console.ReadLine());

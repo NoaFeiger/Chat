@@ -53,5 +53,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommunicationLayer\CommunicationLayer.csproj">
+      <Project>{7fafa14c-8537-456e-87b0-7e928fd30890}</Project>
+      <Name>CommunicationLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersistentLayer\PersistentLayer.csproj">
+      <Project>{c792c7ba-7fdd-469a-8f2b-a8b121774808}</Project>
+      <Name>PersistentLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
