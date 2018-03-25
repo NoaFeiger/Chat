@@ -56,21 +56,25 @@ namespace PresentationLayer
         {
             string groupId;
             string nickname;
-            Console.WriteLine("Insert GroupId:");
-            groupId = Console.ReadLine();
-            Console.WriteLine("Insert nickname: ");
-            nickname = Console.ReadLine();
-            try
+            while (true)
             {
-                chatroom.Registration(groupId, nickname);
+                Console.WriteLine("Insert GroupId:");
+                groupId = Console.ReadLine();
+                Console.WriteLine("Insert nickname: ");
+                nickname = Console.ReadLine();
+                try
+                {
+                    chatroom.Registration(groupId, nickname);
+                    Console.WriteLine("Congratulations- You have been registered!");
+                    break;
+                }
+                catch (Exception e)
+                {
+                    string exception = e.Message;
+                    Console.WriteLine(exception);
 
+                }
             }
-            catch(Exception e)
-            {
-                string exception=e.Message;
-                Console.WriteLine(exception);
-            }
-
         }
         public void Login()
         {
@@ -120,7 +124,7 @@ namespace PresentationLayer
                         break;
                     case 4:
                         Logout();
-                        break;
+                        return;
                     default:
                         Console.WriteLine("you press illegal number, we will repeat our questions again");
                         break;
@@ -139,6 +143,8 @@ namespace PresentationLayer
         public void Logout()
         {
             chatroom.Logout();
+            Console.Clear();
+            Console.WriteLine("Thank you for using ChatRoom N&L&L, We hope to see you again soon!");
         }
         public void Send()
         {
