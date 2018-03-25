@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MileStoneClient.CommunicationLayer
+namespace CommunicationLayer
 {
     public interface IMessage
     {

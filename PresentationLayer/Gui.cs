@@ -9,12 +9,6 @@ namespace PresentationLayer
 
     class Gui
     {
-
-        static void Main(string[] args)
-        {
-            Gui g = new Gui(new Chatroom());
-            g.Start();
-        }
         private Chatroom chatroom;
         const string INVALID_GROUPID_ERROR = "The group doesn't exist!";
         const string INVALID_NICKNAME_ERROR = "Already used nickname";
@@ -69,7 +63,7 @@ namespace PresentationLayer
             try
             {
                 chatroom.Registration(groupId, nickname);
-              
+
             }
             catch(Exception e)
             {
@@ -118,13 +112,11 @@ namespace PresentationLayer
                         Send();
                         break;
                     case 2:
-                        Console.WriteLine("enter how many messages do you want to retrieve");
-                        int nMessages = int.Parse(Console.ReadLine());
-                        chatroom.RetrieveNMessages(nMessages); // TODO - decide if to make it generic
+                    
+                        chatroom.RetrieveNMessages(10); // TODO - decide if to make it generic
                         break;
                     case 3:
-                   //     DisplayNMessages();
-
+                        Display(20);
                         break;
                     case 4:
                         Logout();
@@ -136,9 +128,17 @@ namespace PresentationLayer
             }
              
         }
+        public void Display(int number)
+        {
+            List<Message> messages = chatroom.DisplayNMessages(number);
+            foreach(Message msg in messages)
+            {
+                Console.WriteLine(msg.ToString());
+            }
+        }
         public void Logout()
         {
-
+            chatroom.Logout();
         }
         public void Send()
         {
@@ -158,7 +158,7 @@ namespace PresentationLayer
             }
            
         }
-      /* public static void DisplayNMessages()
+      /*public static void DisplayNMessages()
         {
             Console.WriteLine("enter how many messages do you want to display");
             int nMessagestoDisplay = int.Parse(Console.ReadLine());
