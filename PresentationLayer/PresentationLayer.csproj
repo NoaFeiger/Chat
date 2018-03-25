@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E85C9E94-F702-4F66-8837-BF9995824ADD}</ProjectGuid>
+    <ProjectGuid>{CFDA74B9-D75B-4572-897A-DF05A711E978}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>PresentationLayer</RootNamespace>
     <AssemblyName>PresentationLayer</AssemblyName>
@@ -31,9 +31,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>PresentationLayer.Gui</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Gui.cs" />
     <Compile Include="IGui.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

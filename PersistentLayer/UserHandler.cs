@@ -8,28 +8,28 @@ namespace PersistentLayer
 {
     public class UserHandler
     {
-        //public static void Main(String[] args)
-        //{
-        //    saveToFile(new User("NoaFeiger", "23"));
-        //    saveToFile(new User("NitzanFarhi", "1"));
-        //    List<User> temp = RestoreUsers();
-        //    Print(temp);
-        //    Console.ReadLine();
-        //}
+       // public static void Main(String[] args)
+       // {
+       //     saveToFile(new User("NoaFeiger", "23"));
+       //     saveToFile(new User("NitzanFarhi", "1"));
+       //     List<User> temp = RestoreUsers();
+       // //    Print(temp);
+       // Console.ReadLine();
+       //}
         //public static void Print(List<User> temp) // just for checking
         //{
         //    foreach (User item in temp)
         //    {
         //        Console.WriteLine(item.GroupID() + " " + item.Nickname());
         //    }
-        //}
+        //    //}
         public static void SaveToFile(string nickname, string groupId)
         {
             string startupPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             startupPath += "\\DataUsers.txt";
             using (StreamWriter sw = File.AppendText(startupPath))
             {
-                sw.WriteLine(nickname + "," + groupId);
+                sw.WriteLine(groupId + "," + nickname);
 
             }
 
@@ -48,6 +48,12 @@ namespace PersistentLayer
             return userList;
         }
 
+
+        public static List<string> groupIDs()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
 
@@ -58,12 +64,6 @@ namespace PersistentLayer
 
 
 
-public static List<string> groupIDs()
-        {
-            throw new NotImplementedException();
-        }
-    
-}
 
 
 

@@ -63,7 +63,7 @@ namespace PresentationLayer
             try
             {
                 chatroom.Registration(groupId, nickname);
-              
+
             }
             catch(Exception e)
             {
@@ -112,13 +112,11 @@ namespace PresentationLayer
                         Send();
                         break;
                     case 2:
-                        Console.WriteLine("enter how many messages do you want to retrieve");
-                        int nMessages = int.Parse(Console.ReadLine());
-                        chatroom.RetrieveNMessages(nMessages); // TODO - decide if to make it generic
+                    
+                        chatroom.RetrieveNMessages(10); // TODO - decide if to make it generic
                         break;
                     case 3:
-                   //     DisplayNMessages();
-
+                        Display(20);
                         break;
                     case 4:
                         Logout();
@@ -129,6 +127,14 @@ namespace PresentationLayer
                 }
             }
              
+        }
+        public void Display(int number)
+        {
+            List<Message> messages = chatroom.DisplayNMessages(number);
+            foreach(Message msg in messages)
+            {
+                Console.WriteLine(msg.ToString());
+            }
         }
         public void Logout()
         {

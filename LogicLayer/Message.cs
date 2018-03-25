@@ -33,9 +33,8 @@ namespace LogicLayer
             this.Id = new Guid(id);
             this.nickname = nickname;
             this.groupId = groupId;
-            this.date = new DateTime();//fix that
+            this.date = DateTime.Parse(date);
             this.messageContent = messageContent;
-
         }
         //Save message into file in persistent layer
         public void Save()
@@ -43,11 +42,15 @@ namespace LogicLayer
            MessageHandler.SaveToFile(this.Id, this.nickname, this.groupId, this.date, this.messageContent);
         }
         //Static function which checks if the message content is valid 
-        public static bool CheckVadility(string messageContent)
+        public static bool CheckValidity(string messageContent)
         {
             if (messageContent.Length > MAX_LENGTH)
                 return false;
-            return true; 
+            return true;
+        }
+        public override string ToString()
+        {
+            return this.messageContent + " send by " + this.groupId + ":" + this.nickname + " " + this.date;
         }
     }
 }

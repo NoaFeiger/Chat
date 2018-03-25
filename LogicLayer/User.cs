@@ -17,6 +17,7 @@ namespace LogicLayer
         {
             this.groupID = groupID;
             this.nickname = nickname;
+            Save();
         }
         public string GroupID ()
         {
