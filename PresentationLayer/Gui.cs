@@ -105,6 +105,7 @@ namespace PresentationLayer
             }
             while (true)
             {
+
                 Console.WriteLine("if you want to send a message press 1" + "\n" +
                     "if you want to retrieve 10 messages press 2" + "\n" +
                     "if you want to Display 20 last messages press 3" + "\n" +
